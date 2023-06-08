@@ -1,0 +1,21 @@
+"""Declarar y poblar un arreglo unidimensional 
+de largo 10 con números enterospositivos, utilizando la función random, luego ingrese un número e indique si éste se encuentra en el arreglo"""
+import numpy as np 
+import random
+arreglo = []
+
+for i in range(10):
+    arreglo.append(random.randint(0, 101))
+
+print(arreglo)
+
+while True:
+    numero = int(input("Ingrese un número: "))
+    print("")
+    if numero in arreglo:
+        print("Su número está dentro de el arreglo aleatorio.")
+        break
+    else: 
+        print("Su número no está dentro de el arreglo aleatorio, siga intentando.\n")
+
+        

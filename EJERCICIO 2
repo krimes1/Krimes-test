@@ -1,0 +1,34 @@
+"""Ingresar dos números enteros positivos entre 3 y 6, ambos inclusive, luego esosnúmeros serán las
+dimensiones de un arreglo bidimensional. Posteriormente,poblar la matriz con números reales. 
+Finalmente, muestre:
+• El arreglo poblado.
+• La suma por filas.
+• El promedio por columnas."""
+
+import numpy as np
+
+#Colores de letra:
+start = "\033[1m"
+end = "\033[0;0m"
+
+numero1 = int(input("Ingrese un número (1) entero positivo entre 3 y 6: "))
+numero2 = int(input("Ingrese un número (2) entero positivo entre 3 y 6: "))
+
+if numero1 >= 3 and numero1 <= 6 and numero2 >= 3 and numero2 <= 6:
+    try:
+        arreglo = np.random.uniform(low=-101.0, high=101.0, size=(numero1, numero2))
+        matriz = np.array(arreglo)
+    except:
+        print("Los números ingresados no son  >= 3 o <= 6")
+
+print(start, "Arreglo poblado: ", end)
+print(arreglo)
+print("")
+
+print(start, "Arreglo Sumado: ", end)
+print(np.sum([arreglo]))
+print("")
+
+print("La suma de sus columnas son: ")
+print("")
+print(start,"Fila 1: ", end, matriz[0,:].sum(), start, "\nFila 2: ", end, matriz[1,:].sum(),start,"\nFila 3: ",end, matriz[2,:].sum())
